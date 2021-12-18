@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import { AppHeader, CenterText } from './elements';
 import PropTypes from 'prop-types';
+import Makes from '../../components/Makes';
 
 
 const Header = ({ title }) => (
@@ -20,6 +21,7 @@ const Homepage = () => (
       <Header title="FRIDAY - Car Insurance Service"/>
     <main >
         Please select a car to register:
+        <Makes/>
     </main>
   </Router>
 );

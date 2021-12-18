@@ -1,10 +1,23 @@
-import { all, fork } from 'redux-saga/effects'
+import { all, call, spawn } from 'redux-saga/effects'
+import { getMakesSaga } from './slices/cars/carsSaga';
 // import * as carSaga from './slices/cars/'
 
-const sagas = {
-//   ...carSaga,
-}
 
-export default  function* rootSaga() {
-    yield all([ fork(sagas) ]);
-  }
+export default function* rootSaga () {
+  const sagas = [
+    getMakesSaga,
+  ];
+
+  yield all(sagas.map(saga =>
+    spawn(function* () {
+      while (true) {
+        try {
+          yield call(saga)
+          break
+        } catch (e) {
+          console.log(e)
+        }
+      }
+    }))
+  );
+}
