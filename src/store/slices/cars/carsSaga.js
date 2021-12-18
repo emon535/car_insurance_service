@@ -4,19 +4,16 @@ import { getMakesSagaAction, getModelsSagaAction } from './carsActions'
 import {getMakesReducer,getModelsReducer} from "./carsSlice"
 
  function* getMakes() {
-    console.log("Response===> ");
     try {
-      const response = yield call(fetchMakes)
+      const response = yield call(fetchMakes,)
       yield put(getMakesReducer(response))
     } catch (exception) {
       console.log(exception)
     }
   }
 
- function* getModels() {
-    console.log("Response===> ");
-    try {
-      const response = yield call(fetchModels)
+ function* getModels(action) {    try {
+      const response = yield call(fetchModels,action.payload)
       yield put(getModelsReducer(response))
     } catch (exception) {
       console.log(exception)

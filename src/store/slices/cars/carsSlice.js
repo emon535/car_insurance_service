@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-export const selectMakes = (state) => state.cars.makes;
-export const selectModels = (state, make) => state.cars.models[make];
+
+
 export const reducerName = 'cars'
 
 const generateVehiclesKey = (make, model) => `${make}/${model}`;
@@ -25,12 +25,15 @@ export const carsSlice = createSlice({
       return {...state , makes: action.payload}
     },
     getModelsReducer(state,action) {
-      console.log(action)
       return {...state , models: action.payload}
-
     }
   },
 });
+
+// Selectors 
+
+export const selectMakes = (state) => state.cars.makes;
+export const selectModels = (state) => state.cars.models;
 
 
 export default carsSlice.reducer;

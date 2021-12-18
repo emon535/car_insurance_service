@@ -5,7 +5,7 @@ import { getMakesSagaAction } from "../../store/slices/cars/carsActions";
 import { selectMakes } from "../../store/slices/cars/carsSlice";
 import Models from "../Models";
 
-const Makes = () => {
+const Vehicles = () => {
   const makes = useSelector(selectMakes);
   const dispatch = useDispatch();
 
@@ -21,21 +21,9 @@ const Makes = () => {
   console.log("MAKES", makes);
   return (
     <>
-      {makes?.length > 0 &&
-        makes.map((make, index) => {
-          return (
-            <li key={index}>
-              <Link key={make} to={`/models/${make}`}>
-                {make}
-              </Link>
-            </li>
-          );
-        })}
-      <Routes>
-        <Route path="/models/:make" element={<Models/>}/>
-      </Routes>
+      Vehicles
     </>
   );
 };
 
-export default Makes;
+export default Vehicles;
