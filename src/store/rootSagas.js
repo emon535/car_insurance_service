@@ -1,8 +1,8 @@
 import { all, fork } from 'redux-saga/effects'
-import * as carSaga from './slices/cars/carsSaga'
+// import * as carSaga from './slices/cars/'
 
 const sagas = {
-  ...carSaga,
+//   ...carSaga,
 }
 
 export default  function* rootSaga() {

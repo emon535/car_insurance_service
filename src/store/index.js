@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { createInjectorsEnhancer } from 'redux-injectors'
 import createSagaMiddleware from 'redux-saga'
-import createReducer from './rootReducers'
+import createReducer from './rootReducer'
 import rootSaga from './rootSagas'
 
 
