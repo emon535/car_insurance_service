@@ -3,8 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const reducerName = 'cars'
 
-const generateVehiclesKey = (make, model) => `${make}/${model}`;
-export const selectVehicles = (state, make, model) => state.cars.vehicles[generateVehiclesKey(make, model)];
+const vehilesKeys = (make, model) => `${make}/${model}`;
+export const selectVehicles = (state, make, model) => state.cars.vehicles[vehilesKeys(make, model)];
 
 
 export const carsSlice = createSlice({
@@ -26,6 +26,9 @@ export const carsSlice = createSlice({
     },
     getModelsReducer(state,action) {
       return {...state , models: action.payload}
+    },
+    getVehiclesReducer(state,action) {
+      return {...state , models: action.payload}
     }
   },
 });
@@ -37,5 +40,5 @@ export const selectModels = (state) => state.cars.models;
 
 
 export default carsSlice.reducer;
-export const { getMakesReducer, getModelsReducer } = carsSlice.actions
+export const { getMakesReducer, getModelsReducer,getVehiclesReducer } = carsSlice.actions
 

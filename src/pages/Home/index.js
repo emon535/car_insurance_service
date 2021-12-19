@@ -1,6 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
-import { AppHeader, CenterText } from "./elements";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { AppHeader } from "./elements";
 import PropTypes from "prop-types";
 import Makes from "../../components/Makes";
 import Models from "../../components/Models";
@@ -25,7 +25,7 @@ const Homepage = () => (
         <Routes>
         <Route path="/" element={<Makes />}>
           <Route path="/models/:make" element={<Models />} >
-          <Route path="/models/:make/:models" element={<Vehicles />} />
+          <Route path="/models/:make/:model" element={<Vehicles />} />
           </Route>
         </Route>
         </Routes>

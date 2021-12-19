@@ -1,24 +1,24 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Route, Routes } from "react-router-dom";
-import { getMakesSagaAction } from "../../store/slices/cars/carsActions";
-import { selectMakes } from "../../store/slices/cars/carsSlice";
-import Models from "../Models";
+import { useParams } from "react-router-dom";
+import { getVehiclesSagaAction } from "../../store/slices/cars/carsActions";
+import { selectVehicles } from "../../store/slices/cars/carsSlice";
 
 const Vehicles = () => {
-  const makes = useSelector(selectMakes);
   const dispatch = useDispatch();
+  let { make, model } = useParams();
+  const vehicles = useSelector(state => selectVehicles(state, make, model));
 
-  const loadMakes = useCallback(() => {
-    dispatch(getMakesSagaAction());
+  const loadVehicles = useCallback(() => {
+    dispatch(getVehiclesSagaAction({make, model}));
   }, [dispatch]);
 
   useEffect(() => {
-    console.log("Calling loadmakes");
-    loadMakes();
+    console.log("Calling load vehicles", vehicles);
+    loadVehicles();
   },[]);
 
-  console.log("MAKES", makes);
+  console.log("Vehicles", vehicles);
   return (
     <>
       Vehicles
