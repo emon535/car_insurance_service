@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Route, Routes, useLocation, useParams } from "react-router-dom";
+import { Link, Outlet, Route, Routes, useLocation, useParams } from "react-router-dom";
 import { getMakesSagaAction, getModelsSagaAction } from "../../store/slices/cars/carsActions";
 import { getModelsSaga } from "../../store/slices/cars/carsSaga";
 import { selectMakes, selectModels } from "../../store/slices/cars/carsSlice";
@@ -42,9 +42,7 @@ const Models = () => {
         </li>
       );
     })}
-  <Routes>
-    <Route  path={`${pathname}/:model`} element={<Vehicles/>}/>
-  </Routes>
+  <Outlet/>
 </>
 };
 

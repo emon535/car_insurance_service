@@ -4,6 +4,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import { getMakesSagaAction } from "../../store/slices/cars/carsActions";
 import { selectMakes } from "../../store/slices/cars/carsSlice";
 import Models from "../Models";
+import { Outlet } from 'react-router-dom';
 
 const Makes = () => {
   const makes = useSelector(selectMakes);
@@ -31,9 +32,7 @@ const Makes = () => {
             </li>
           );
         })}
-      <Routes>
-        <Route path="/models/:make" element={<Models/>}/>
-      </Routes>
+      <Outlet/>
     </>
   );
 };
