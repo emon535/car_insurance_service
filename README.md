@@ -1,3 +1,37 @@
+## Setup in Local environment
+
+1. Clone the repo from `https://github.com/emon535/car_insurance_service.git`
+2. Change the directory : `cd car_insurance_service/`
+3. install packages with "yarn"
+4. start local server with : **yarn server**
+5. start react app : **yarn start**
+6. hit **http://localhost:3000** on the browser
+
+## Local build setup guide
+
+1. Clone the repo from `https://github.com/emon535/car_insurance_service.git`
+2. Change the directory : `cd car_insurance_service/`
+3. install dependencies: **yarn**
+4. **npm install -g serve** or **yarn global add serve**
+5. start local server with : **yarn server**
+6. build app: **yarn build**
+7. serve build locally: **serve -s build**
+8. open **localhost:5000** in your browser(Google Chrome, Mozilla Firefox, Safari, Microsoft Edge)d
+
+## Main Dependencies
+
+- **react** - main library
+- **react-scripts** - helps with project setup: development, builds, linters, scripts and etc.
+- **@testing-library** - library for testing react component with jest
+- **redux** - application state management
+- **@reduxjs/toolkit** - usefull toolkit for better redux store setup and configuration(immer and etc.)
+- **react-icons** - library with icon components for better UX
+- **react-router** - routes control in application
+- **redux-injectors** - component for virtualizing data(vehicles)
+- **redux-saga** - Async request management
+- **redux-toolkit** - Official React bindings for Redux
+- **styled-components** - Wrap with styled to create custom elements.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
