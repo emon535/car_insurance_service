@@ -17,16 +17,16 @@ const Vehicles = () => {
     loadVehicles();
   },[]);
 
-  // console.log("Vehicles", vehicles);
+  console.log("Vehicles", vehicles);
   return (
     <>
       Vehicles Component
       {vehicles?.length > 0 &&
-    vehicles.map((vehicle, index) => {
-      console.log(vehicle)
+      
+      vehicles.map((vehicle, index) => {
       return (
         <li key={index}>
-          <Link key={model} >{vehicle[0].bodyType}</Link>
+          {vehicle.fuelType}
         </li>
       );
     })}

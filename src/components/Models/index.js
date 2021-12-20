@@ -8,11 +8,8 @@ import Vehicles from "../Vehicles";
 
 
 const Models = () => {
-  const { pathname } = useLocation();
-  const match = pathname.match(/models\/(.*)\/(.*)/);
   const dispatch = useDispatch();
   const { make } = useParams();
-  console.log(match, "Match",make);
 
   // const models = useSelector((state, make) => state.cars.models[make]);
   const models = useSelector(selectModels);

@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const reducerName = "cars";
 
-const vehilesKeys = ({make, model}) => `${make}/${model}`;
-export const selectVehicles = (state, make, model) => state.cars.vehicles[vehilesKeys(make, model)];
+const vehilesKeys = (make, model) => `${make}/${model}`;
+export const selectVehicles = (state, make, model) => state.cars.vehicles[vehilesKeys(make,model)];
 
 export const carsSlice = createSlice({
   name: reducerName,
@@ -35,7 +35,6 @@ export const carsSlice = createSlice({
 });
 
 // Selectors
-
 export const selectMakes = (state) => state.cars.makes;
 export const selectModels = (state) => state.cars.models;
 
