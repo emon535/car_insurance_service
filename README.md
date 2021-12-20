@@ -1,3 +1,5 @@
+# FRIDAY - Car Insurance Service
+
 ## Setup in Local environment
 
 1. Clone the repo from `https://github.com/emon535/car_insurance_service.git`
@@ -31,6 +33,50 @@
 - **redux-saga** - Async request management
 - **redux-toolkit** - Official React bindings for Redux
 - **styled-components** - Wrap with styled to create custom elements.
+
+## Folder Structure
+
+============================
+
+> Top Level folder structure :
+
+    ├── apiserver               # Api server provided by FRIDAY.
+    ├── node_modules            # All the node module packages
+    ├── public                  # public resource folder where index.html is "root" id is used as parent div element.
+    ├── src                     # All the source codes for application
+    ├── .gitignore              # gitignore
+    ├── package.json            # all dependencies list
+    ├── yarn.lock               # information about the current versions of dependencies.
+    └── README.md               # project documenation
+
+> src file structure :
+
+         ├── ...
+    ├──── src                                       # Main source file
+    │    ├── apis                                   # Api's for the application
+    │    ├── components   │                         # Component folder where I kept all the components
+    │    │                ├── Makes
+    │    │                ├── Models
+    │    │                ├── vehicles
+    │    │                                          # script to run custom training on the biomedical data using spacy
+    │    ├── configs                                # Application configuration
+    │    ├── pages     ---│
+    │    │                ├── Home
+    │    │
+    │    │
+    │    │
+    │    ├── services                                # api services and other services
+    │    ├── store    ----│                          # Store management tools like redux, sagas and slices
+    │    │                ├── slices
+    │    │                ├── index.js
+    │    │                ├── rootReducer.js
+    │    │                ├── rootSaga.js            # Root Saga folder to export all the sagas
+    │    ├── styles
+    │    ├── utils                                   # All the utilities files like constants and other
+    │    ├── index.css                               # css root file to reset or initiate all css
+    │    ├── reportWebVitals.js
+    │    ├── setupTests.js
+    └── ...
 
 # Getting Started with Create React App
 
