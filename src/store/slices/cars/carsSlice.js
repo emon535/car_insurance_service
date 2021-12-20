@@ -1,11 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
-
-export const reducerName = 'cars'
+export const reducerName = "cars";
 
 const vehilesKeys = (make, model) => `${make}/${model}`;
-export const selectVehicles = (state, make, model) => state.cars.vehicles[vehilesKeys(make, model)];
-
+// export const selectVehicles = (state, make, model) => state.cars.vehicles[vehilesKeys(make, model)];
 
 export const carsSlice = createSlice({
   name: reducerName,
@@ -22,23 +20,23 @@ export const carsSlice = createSlice({
   },
   reducers: {
     getMakesReducer(state, action) {
-      return {...state , makes: action.payload}
+      return { ...state, makes: action.payload };
     },
-    getModelsReducer(state,action) {
-      return {...state , models: action.payload}
+    getModelsReducer(state, action) {
+      return { ...state, models: action.payload };
     },
-    getVehiclesReducer(state,action) {
-      return {...state , models: action.payload}
-    }
+    getVehiclesReducer(state, action) {
+      console.log("action",action)
+      return { ...state, vehicles: action.payload };
+    },
   },
 });
 
-// Selectors 
+// Selectors
 
 export const selectMakes = (state) => state.cars.makes;
 export const selectModels = (state) => state.cars.models;
 
-
 export default carsSlice.reducer;
-export const { getMakesReducer, getModelsReducer,getVehiclesReducer } = carsSlice.actions
-
+export const { getMakesReducer, getModelsReducer, getVehiclesReducer } =
+  carsSlice.actions;

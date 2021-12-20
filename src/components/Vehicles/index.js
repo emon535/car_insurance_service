@@ -7,18 +7,17 @@ import { selectVehicles } from "../../store/slices/cars/carsSlice";
 const Vehicles = () => {
   const dispatch = useDispatch();
   let { make, model } = useParams();
-  const vehicles = useSelector(state => selectVehicles(state, make, model));
+  // const vehicles = useSelector(state => selectVehicles(state, make, model));
 
   const loadVehicles = useCallback(() => {
     dispatch(getVehiclesSagaAction({make, model}));
   }, [dispatch]);
 
   useEffect(() => {
-    console.log("Calling load vehicles", vehicles);
     loadVehicles();
   },[]);
 
-  console.log("Vehicles", vehicles);
+  // console.log("Vehicles", vehicles);
   return (
     <>
       Vehicles

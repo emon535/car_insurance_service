@@ -9,7 +9,11 @@ import {
   getModelsSagaAction,
   getVehiclesSagaAction,
 } from "./carsActions";
-import { getMakesReducer, getModelsReducer } from "./carsSlice";
+import {
+  getMakesReducer,
+  getModelsReducer,
+  getVehiclesReducer,
+} from "./carsSlice";
 
 function* getMakes() {
   try {
@@ -30,10 +34,10 @@ function* getModels(action) {
 }
 
 function* getVehicles(action) {
-    console.log("Get Vehicles", action);
+  console.log("Get Vehicles", action);
   try {
     const response = yield call(fetchVehicles, action.payload);
-    yield put(getModelsReducer(response));
+    yield put(getVehiclesReducer(response));
   } catch (exception) {
     console.log(exception);
   }
