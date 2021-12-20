@@ -38,7 +38,7 @@ const Models = () => {
     models.map((model, index) => {
       return (
         <li key={index}>
-          <Link key={model}  to={`${pathname}/${model}`}>{model}</Link>
+          <Link key={model}  to={`/models/${make}/${model}`}>{model}</Link>
         </li>
       );
     })}

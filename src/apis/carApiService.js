@@ -7,13 +7,11 @@ export const fetchMakes = () =>
 export const fetchModels = (make) =>
   sendRequest(API_ENDPOINTS.models.url, API_ENDPOINTS.models.method, { make });
 
-export const fetchVehicles = ( make, model ) =>{
-    console.log("make and models in fetch vehicles", make, model)
-    sendRequest(API_ENDPOINTS.vehicles.url, API_ENDPOINTS.vehicles.method, 
+export const fetchVehicles = ( make, model ) => sendRequest(API_ENDPOINTS.vehicles.url, API_ENDPOINTS.vehicles.method, 
       make,
       model,
     );
-}
+
 
 export const filterItems = (item, searchText) =>
   item.match(new RegExp(searchText, "i"));
