@@ -1,11 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
-export const selectMakes = (state) => state.cars.makes;
-export const selectModels = (state, make) => state.cars.models[make];
-export const reducerName = 'cars'
+import { createSlice } from "@reduxjs/toolkit";
 
-const generateVehiclesKey = (make, model) => `${make}/${model}`;
-export const selectVehicles = (state, make, model) => state.cars.vehicles[generateVehiclesKey(make, model)];
+export const reducerName = "cars";
 
+const vehilesKeys = (make, model) => `${make}/${model}`;
+export const selectVehicles = (state, make, model) => state.cars.vehicles[vehilesKeys(make,model)];
 
 export const carsSlice = createSlice({
   name: reducerName,
@@ -21,18 +19,25 @@ export const carsSlice = createSlice({
     vehicles: {},
   },
   reducers: {
-    getMakesReducer(state, action) {
-      return {...state , makes: action.payload}
+    getMakesReducer(state, {payload}) {
+      return { ...state, makes: payload };
     },
-    getModelsReducer(state,action) {
-      console.log(action)
-      return {...state , models: action.payload}
-
-    }
+    getModelsReducer(state, {payload}) {
+      return { ...state, models: payload };
+    },
+    getVehiclesReducer(state, {payload}) {
+      console.log("getVehiclesReducer payload",payload);
+      const vehiclesDetailsString = `${payload.vehiclesDetails.make}/${payload.vehiclesDetails.model}`
+      console.log("vehiclesDetailsString",vehiclesDetailsString);
+      return { ...state, vehicles:{[`${vehiclesDetailsString}`]: payload.response }};
+    },
   },
 });
 
+// Selectors
+export const selectMakes = (state) => state.cars.makes;
+export const selectModels = (state) => state.cars.models;
 
 export default carsSlice.reducer;
-export const { getMakesReducer, getModelsReducer } = carsSlice.actions
-
+export const { getMakesReducer, getModelsReducer, getVehiclesReducer } =
+  carsSlice.actions;

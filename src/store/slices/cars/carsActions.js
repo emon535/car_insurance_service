@@ -7,3 +7,7 @@ export const getMakesSagaAction = createAction(
     `API/GET_MODELS`
   )
   
+  export const getVehiclesSagaAction = createAction(
+    `API/GET_VEHICLES`
+  )
+  
