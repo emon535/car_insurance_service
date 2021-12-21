@@ -33,7 +33,6 @@ export const SectionHeader = styled("div")`
   border-radius: 1px;
   border: 1px solid gray;
   margin: 0 auto;
-  display: flex;
 `;
 
 export const RightButton = styled("button")`

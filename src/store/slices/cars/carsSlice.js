@@ -35,6 +35,9 @@ export const carsSlice = createSlice({
         vehicles: { [`${vehiclesDetailsString}`]: payload.response },
       };
     },
+    resetStateReduccer(state){
+      return { ...state, models:{}}
+    }
   },
 });
 
@@ -43,5 +46,5 @@ export const selectMakes = (state) => state.cars.makes;
 export const selectModels = (state) => state.cars.models;
 
 export default carsSlice.reducer;
-export const { getMakesReducer, getModelsReducer, getVehiclesReducer } =
+export const { getMakesReducer, getModelsReducer, getVehiclesReducer,resetStateReduccer } =
   carsSlice.actions;

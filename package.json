@@ -2,7 +2,7 @@
   "name": "car-insurance-service",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://emon535.github.io/car_insurance_service",
+  "homepage": "http://emon535.github.io/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.1",
     "@testing-library/jest-dom": "^5.16.1",

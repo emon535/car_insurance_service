@@ -1,17 +1,17 @@
 import { useCallback, useEffect } from "react";
+import { FaCarSide } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
+import { RightButton } from "../../pages/Home/elements";
 import { getMakesSagaAction } from "../../store/slices/cars/carsActions";
-import { selectMakes } from "../../store/slices/cars/carsSlice";
-import { Outlet } from "react-router-dom";
+import { resetStateReduccer, selectMakes } from "../../store/slices/cars/carsSlice";
 import {
   Card,
   CardsWrapper,
   CustomLink,
-  SectionHeader,
+  SectionHeader
 } from "../../styles/commonStyledComponents";
-import { RightButton } from "../../pages/Home/elements";
-import { FaCarSide } from "react-icons/fa";
+
 const Makes = () => {
   const makes = useSelector(selectMakes);
   const dispatch = useDispatch();
@@ -22,6 +22,10 @@ const Makes = () => {
   const loadMakes = useCallback(() => {
     dispatch(getMakesSagaAction());
   }, [dispatch]);
+
+  const resetState = useCallback(()=>{
+    dispatch(resetStateReduccer())
+  }, [dispatch])
 
   useEffect(() => {
     console.log("Calling loadmakes");
@@ -42,14 +46,14 @@ const Makes = () => {
         {make ? (
           <>
             <Link to={"/"}>
-              <RightButton>Reset</RightButton>
+              <RightButton onClick={resetState}>Reset</RightButton>
             </Link>
           </>
         ) : (
           <>
             <CardsWrapper>
               {makes?.length > 0 &&
-                makes.map((make, index) => {
+                makes.map((make) => {
                   return (
                     <CustomLink key={make} to={`/models/${make}`}>
                       <Card> {make}</Card>

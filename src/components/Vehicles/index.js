@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getVehiclesSagaAction } from "../../store/slices/cars/carsActions";
 import { selectVehicles } from "../../store/slices/cars/carsSlice";
 import {
   CardsWrapper,
   CustomLink,
-  SectionHeader,
+  SectionHeader
 } from "../../styles/commonStyledComponents";
 import { VehicleCard } from "./elements";
 
@@ -43,7 +43,6 @@ const Vehicles = () => {
                   to=""
                   onClick={(e) => getSelectedInformation(e)}
                 >
-                  {" "}
                   <span>Body Type: {vehicle.bodyType}</span>
                   <h6>Engine PowerKW : {vehicle.enginePowerKW}</h6>
                   <h6>Fuel Type: {vehicle.fuelType}</h6>

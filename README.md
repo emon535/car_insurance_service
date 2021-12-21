@@ -17,8 +17,6 @@
 4. **npm install -g serve** or **yarn global add serve**
 5. start local server with : **yarn server**
 6. build app: **yarn build**
-7. serve build locally: **serve -s build**
-8. open **localhost:5000** in your browser(Google Chrome, Mozilla Firefox, Safari, Microsoft Edge)d
 
 ## Main Dependencies
 
@@ -29,7 +27,7 @@
 - **@reduxjs/toolkit** - usefull toolkit for better redux store setup and configuration(immer and etc.)
 - **react-icons** - library with icon components for better UX
 - **react-router** - routes control in application
-- **redux-injectors** - component for virtualizing data(vehicles)
+- **redux-injectors** - Dynamically load redux reducers and redux-saga sagas as needed
 - **redux-saga** - Async request management
 - **redux-toolkit** - Official React bindings for Redux
 - **styled-components** - Wrap with styled to create custom elements.
