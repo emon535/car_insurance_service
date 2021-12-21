@@ -11,7 +11,7 @@ import {
   SectionHeader,
 } from "../../styles/commonStyledComponents";
 import { RightButton } from "../../pages/Home/elements";
-import {FaCarSide} from "react-icons/fa"
+import { FaCarSide } from "react-icons/fa";
 const Makes = () => {
   const makes = useSelector(selectMakes);
   const dispatch = useDispatch();
@@ -30,24 +30,35 @@ const Makes = () => {
 
   console.log("MAKES", makes);
   return (
-    
-    <><SectionHeader>  <FaCarSide/> MAKES  {make? ": "+ make :""}
-     {makes?.length >= 0 ?"" :<RightButton onClick={loadMakes}>Refresh</RightButton>}
-     
-    { make? ( <>
-      <Link to={"/"} ><RightButton>Reset</RightButton></Link>
-    </>
-    ):(<>
-      <CardsWrapper>
-        {makes?.length > 0 &&
-          makes.map((make, index) => {
-            return (
-              <CustomLink key={make} to={`/models/${make}`}>
-                <Card> {make}</Card>
-              </CustomLink>
-            );
-          })}
-      </CardsWrapper></>)}
+    <>
+      <SectionHeader>
+        {" "}
+        <FaCarSide /> MAKES {make ? ": " + make : ""}
+        {makes?.length >= 0 ? (
+          ""
+        ) : (
+          <RightButton onClick={loadMakes}>Refresh</RightButton>
+        )}
+        {make ? (
+          <>
+            <Link to={"/"}>
+              <RightButton>Reset</RightButton>
+            </Link>
+          </>
+        ) : (
+          <>
+            <CardsWrapper>
+              {makes?.length > 0 &&
+                makes.map((make, index) => {
+                  return (
+                    <CustomLink key={make} to={`/models/${make}`}>
+                      <Card> {make}</Card>
+                    </CustomLink>
+                  );
+                })}
+            </CardsWrapper>
+          </>
+        )}
       </SectionHeader>
       <Outlet />
     </>

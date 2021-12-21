@@ -54,29 +54,29 @@ const Models = () => {
         ) : (
           <RightButton onClick={loadModels}>Refresh</RightButton>
         )}
-      {model ? (
-        <>
-          <Link to={"/"}>
-            <button>Reset</button>
-          </Link>
-        </>
-      ) : (
-        <>
-          <CardsWrapper>
-            {models?.length > 0 &&
-              models.map((model, index) => {
-                return (
-                  <Card key={index}>
-                    <CustomLink key={model} to={`/models/${make}/${model}`}>
-                      {model}
-                    </CustomLink>
-                  </Card>
-                );
-              })}
-          </CardsWrapper>
-        </>
-      )}
-        </SectionHeader>
+        {model ? (
+          <>
+            <Link to={"/"}>
+              <button>Reset</button>
+            </Link>
+          </>
+        ) : (
+          <>
+            <CardsWrapper>
+              {models?.length > 0 &&
+                models.map((model, index) => {
+                  return (
+                    <Card key={index}>
+                      <CustomLink key={model} to={`/models/${make}/${model}`}>
+                        {model}
+                      </CustomLink>
+                    </Card>
+                  );
+                })}
+            </CardsWrapper>
+          </>
+        )}
+      </SectionHeader>
       <Outlet />
     </>
   );

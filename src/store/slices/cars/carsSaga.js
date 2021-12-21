@@ -37,7 +37,9 @@ function* getVehicles(action) {
   console.log("Get Vehicles", action);
   try {
     const response = yield call(fetchVehicles, action.payload);
-    yield put(getVehiclesReducer({response, "vehiclesDetails":action.payload}));
+    yield put(
+      getVehiclesReducer({ response, vehiclesDetails: action.payload })
+    );
   } catch (exception) {
     console.log(exception);
   }
