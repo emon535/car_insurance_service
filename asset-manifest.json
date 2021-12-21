@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/car_insurance_service/static/css/main.e6c13ad2.css",
+    "main.js": "/car_insurance_service/static/js/main.03037c09.js",
+    "static/js/787.6bea9d56.chunk.js": "/car_insurance_service/static/js/787.6bea9d56.chunk.js",
+    "index.html": "/car_insurance_service/index.html",
+    "main.e6c13ad2.css.map": "/car_insurance_service/static/css/main.e6c13ad2.css.map",
+    "main.03037c09.js.map": "/car_insurance_service/static/js/main.03037c09.js.map",
+    "787.6bea9d56.chunk.js.map": "/car_insurance_service/static/js/787.6bea9d56.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.03037c09.js"
+  ]
+}
