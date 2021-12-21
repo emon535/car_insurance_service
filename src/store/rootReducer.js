@@ -1,20 +1,18 @@
-import { combineReducers } from '@reduxjs/toolkit'
-import carsReducer, {
-  reducerName as car
-} from "./slices/cars/carsSlice"
+import { combineReducers } from "@reduxjs/toolkit";
+import carsReducer, { reducerName as car } from "./slices/cars/carsSlice";
 /** reducers */
 
 /** Initial reducers in the reducer registry */
-const defaultReducers = {}
+const defaultReducers = {};
 /** get reducers */
-defaultReducers[car] = carsReducer
+defaultReducers[car] = carsReducer;
 
 /** create method to combine reducers */
 const createReducer = (injectedReducers = {}) => {
   return combineReducers({
     ...defaultReducers,
     ...injectedReducers,
-  })
-}
+  });
+};
 
-export default createReducer
+export default createReducer;

@@ -1,16 +1,15 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { createInjectorsEnhancer } from 'redux-injectors'
-import createSagaMiddleware from 'redux-saga'
-import createReducer from './rootReducer'
-import rootSaga from './rootSagas'
-
+import { configureStore } from "@reduxjs/toolkit";
+import { createInjectorsEnhancer } from "redux-injectors";
+import createSagaMiddleware from "redux-saga";
+import createReducer from "./rootReducer";
+import rootSaga from "./rootSagas";
 
 /** method to create store */
 const configureAppStore = (initialState = {}) => {
-  const reduxSagaMonitorOptions = {}
-  const sagaMiddleware = createSagaMiddleware(reduxSagaMonitorOptions)
+  const reduxSagaMonitorOptions = {};
+  const sagaMiddleware = createSagaMiddleware(reduxSagaMonitorOptions);
 
-  const { run: runSaga } = sagaMiddleware
+  const { run: runSaga } = sagaMiddleware;
 
   /** setup redux-injectors to load reducers dynamically*/
   const enhancers = [
@@ -18,7 +17,7 @@ const configureAppStore = (initialState = {}) => {
       createReducer,
       runSaga,
     }),
-  ]
+  ];
 
   const store = configureStore({
     reducer: createReducer(),
@@ -30,14 +29,14 @@ const configureAppStore = (initialState = {}) => {
     preloadedState: initialState,
     devTools: true,
     enhancers,
-  })
+  });
 
-  sagaMiddleware.run(rootSaga)
-  return store
-}
+  sagaMiddleware.run(rootSaga);
+  return store;
+};
 
 /** initialize the root store */
-const rootStore = configureAppStore()
+const rootStore = configureAppStore();
 
 /** export the default root store  */
-export default rootStore
+export default rootStore;
