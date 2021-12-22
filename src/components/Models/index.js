@@ -57,7 +57,7 @@ const Models = () => {
         ) : (
           <>
             <CardsWrapper>
-              {models?.length > 0 &&
+              {models?.length > 0 ?
                 models.map((model, index) => {
                   return (
                     <Card key={index}>
@@ -66,7 +66,7 @@ const Models = () => {
                       </CustomLink>
                     </Card>
                   );
-                })}
+                }) : <p>No Model found</p> }
             </CardsWrapper>
           </>
         )}
