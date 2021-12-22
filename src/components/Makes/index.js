@@ -4,12 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { RightButton } from "../../pages/Home/elements";
 import { getMakesSagaAction } from "../../store/slices/cars/carsActions";
-import { resetStateReduccer, selectMakes } from "../../store/slices/cars/carsSlice";
+import {
+  resetStateReduccer,
+  selectMakes,
+} from "../../store/slices/cars/carsSlice";
 import {
   Card,
   CardsWrapper,
   CustomLink,
-  SectionHeader
+  SectionHeader,
 } from "../../styles/commonStyledComponents";
 
 const Makes = () => {
@@ -23,9 +26,9 @@ const Makes = () => {
     dispatch(getMakesSagaAction());
   }, [dispatch]);
 
-  const resetState = useCallback(()=>{
-    dispatch(resetStateReduccer())
-  }, [dispatch])
+  const resetState = useCallback(() => {
+    dispatch(resetStateReduccer());
+  }, [dispatch]);
 
   useEffect(() => {
     console.log("Calling loadmakes");
